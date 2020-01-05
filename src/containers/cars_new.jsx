@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import postCars from '../actions';
 import { Link } from 'react-router-dom';
 
+import Aside from '../components/aside.jsx';
+
 
 class CarsNew extends Component {
   onSubmit = (values) => {
@@ -38,7 +40,7 @@ class CarsNew extends Component {
         <button type="submit">Add car</button>
         </form>
       </div>
-    ]
+    ];
   }
 }
 
@@ -48,6 +50,8 @@ function mapStateToProps(state) {
   };
 }
 
-export default reduxForm{(
+export default reduxForm({
   form: 'newCarForm'
-  )}(connect(mapStateToProps, {postCars}) (CarsNew));
+})(
+  connect(mapStateToProps, { postCars }) (CarsNew)
+);
