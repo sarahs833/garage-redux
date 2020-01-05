@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 import { fetchCar } from '../actions'
 
 class CarsShow extends Component {
-   componentWillReceiveProps(nextProps) {
-    if (nextProps.car.id !== this.props.car.id) {
+   componentWillMount() {
+    if (!this.props.car) {
       this.props.fetchCar(this.props.match.params.id);
     }
   }
