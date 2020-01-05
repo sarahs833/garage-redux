@@ -13,7 +13,7 @@ export function fetchCars(garage) {
 
 export function postCars(garage, car, callback) {
   const url = `https://wagon-garage-api.herokuapp.com/${garage}/cars`;
-    const promise = fetch(url, {
+  const promise = fetch(url, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -27,4 +27,14 @@ export function postCars(garage, car, callback) {
     payload: promise // Will be resolved by redux-promise
   };
 
+}
+
+export function fetchCar(id) {
+ const url = `https://wagon-garage-api.herokuapp.com/cars/${id}`;
+  const promise = fetch(url).then(response => response.json());
+
+  return {
+    type: "FETCH_CAR",
+    payload: promise
+  };
 }
