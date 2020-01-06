@@ -30,7 +30,7 @@ class CarsIndex extends Component {
           return (
             <div key={car.id} className="car-smallad">
               <Link to={`/cars/${car.id}`} key={car.id} />
-              <img className="car-logo" src="assets/images/logo_square.svg" />
+              <div className="car-logo" style={{backgroundImage: "url('https://images.unsplash.com/photo-1560454356-3412f0c59eb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')"}} ></div>
               <div className="car-details">
                 <span>{car.brand} - {car.model}</span>
                 <ul>

@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
-import postCars from '../actions';
 import { Link } from 'react-router-dom';
 
-import Aside from '../components/aside.jsx';
+import Aside from '../components/aside';
+import { postCars } from '../actions';
 
 
 class CarsNew extends Component {
   onSubmit = (values) => {
-    this.props.postCars(this.props.garage, values,() => {
+    this.props.postCars(this.props.garage, values, () => {
       this.props.history.push("/");
     })
   }

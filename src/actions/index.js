@@ -38,3 +38,12 @@ export function fetchCar(id) {
     payload: promise
   };
 }
+
+export function deleteCar(history,car) {
+ const url = `https://wagon-garage-api.herokuapp.com/cars/${car.id}`;
+ fetch(url, { method: 'DELETE' }).then(response => response.json()).then(() => history.push(""));
+  return {
+    type: "REMOVE_CAR",
+    payload: car
+  }
+}
